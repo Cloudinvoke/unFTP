@@ -2,8 +2,8 @@
 name = "unftp"
 version = "0.16.0"
 authors = [
-  "Hannes de Jager <hannes.de.jager@gmail.com>",
-  "Rob klein Gunnewiek <rob.kleingunnewiek@gmail.com>",
+  "Hannes de Jager <hannes@cloudinvoke.com>",
+  "Rob klein Gunnewiek <rob@cloudinvoke.com>",
   "Agoston Horvath <ahorvath@bol.com>",
   "Dávid Kosztka <dkosztka@bol.com>",
   "Koen Wilde <koen@chillheid.nl>",
