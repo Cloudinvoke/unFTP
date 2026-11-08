@@ -11,6 +11,19 @@
 - The project tries to adhere loosly to a domain centric architecture layout like the Clean and Onion Architectures.
 - Github Actions are used to build tests and run images
 
+## Examples and release checks
+
+- Build all workspace examples with `cargo build --examples --workspace --all-features` before
+  submitting changes or preparing a release. `make pr-prep` includes this check.
+- Run each example whose prerequisites are available and verify the behavior it demonstrates.
+  For `slog-redis`'s `log_to_redis` example, start a local Redis instance and check that the
+  example writes and reads a log entry.
+- Before releasing the server, start unFTP with a local test configuration and verify FTP login,
+  directory listing, and a download through a client.
+- Record the result for each example. If an external service, credential, or platform capability
+  is unavailable, name the example and missing prerequisite in the release handoff. A successful
+  build alone does not establish that an example works at runtime.
+
 ## Packaging
 
 - We offer binaries that are hosted on Github

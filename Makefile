@@ -68,6 +68,7 @@ pr-prep: # Runs checks to ensure you're ready for a pull request
 	cargo test --verbose  --workspace --all --all-features
 	cargo doc  --workspace --all-features --no-deps
 	cargo build --verbose  --workspace --all --all-features
+	cargo build --examples --workspace --all-features
 
 .PHONY: publish
 publish: # Publishes to crates.io
