@@ -1,6 +1,6 @@
 [package]
 name = "unftp"
-version = "0.16.0"
+version = "0.17.0"
 authors = [
   "Hannes de Jager <hannes@cloudinvoke.com>",
   "Rob klein Gunnewiek <rob@cloudinvoke.com>",

@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 2026-11-19 unftp v0.17.0
+
+- [#258](https://github.com/Cloudinvoke/unFTP/pull/258) Use a version-free FTP `HELP` reply by default and allow configuring it on the command line or from a file
+- [#258](https://github.com/Cloudinvoke/unFTP/pull/258) Upgrade to libunftp 0.25.1, OpenDAL 0.59.5, and unftp-sbe-opendal 0.4.11
+- [#254](https://github.com/Cloudinvoke/unFTP/pull/254) Publish `latest` for stable Alpine images
+- [#255](https://github.com/Cloudinvoke/unFTP/pull/255) Publish documentation from an isolated worktree
+- [#253](https://github.com/Cloudinvoke/unFTP/pull/253) Link release changes to merged pull requests
+
 ## 2026-10-31 unftp v0.16.0
 
 - [#250](https://github.com/Cloudinvoke/unFTP/pull/250) Publish release images to GitHub Container Registry as `ghcr.io/cloudinvoke/unftp`
