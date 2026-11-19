@@ -29,6 +29,8 @@ pub const FTPS_KEY_FILE: &str = "ftps-key-file";
 pub const FTPS_REQUIRED_ON_CONTROL_CHANNEL: &str = "ftps-required-on-control-channel";
 pub const FTPS_REQUIRED_ON_DATA_CHANNEL: &str = "ftps-required-on-data-channel";
 pub const FTPS_TRUST_STORE: &str = "ftps-trust-store";
+pub const HELP_TEXT: &str = "help-text";
+pub const HELP_TEXT_FILE: &str = "help-text-file";
 #[cfg(feature = "sbe_gcs")]
 pub const GCS_BASE_URL: &str = "sbe-gcs-base-url";
 #[cfg(feature = "sbe_gcs")]
@@ -215,6 +217,21 @@ pub(crate) fn clap_app(tmp_dir: &str) -> Command {
                 .help("Sets the logging level. This overrides the verbosity flag -v if it is \
                           also specified.")
                 .env("UNFTP_LOG_LEVEL")
+        )
+        .arg(
+            Arg::new(HELP_TEXT)
+                .long("help-text")
+                .value_name("TEXT")
+                .help("Text returned by the FTP HELP command")
+                .env("UNFTP_HELP_TEXT")
+                .conflicts_with(HELP_TEXT_FILE),
+        )
+        .arg(
+            Arg::new(HELP_TEXT_FILE)
+                .long("help-text-file")
+                .value_name("PATH")
+                .help("Read the FTP HELP reply from a file, one line per reply line")
+                .env("UNFTP_HELP_TEXT_FILE"),
         )
         .arg(
             Arg::new(BIND_ADDRESS)

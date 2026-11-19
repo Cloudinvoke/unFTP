@@ -34,18 +34,18 @@ version = "0.2.0"
 [dependencies]
 async-trait = "0.1.92"
 base64 = "0.23.1"
-clap = { version = "4.6.7", features = ["derive", "env", "string"] }
+clap = { version = "4.6.8", features = ["derive", "env", "string"] }
 console-subscriber = { version = "0.5.0", optional = true }
-flate2 = "1.1.10"
+flate2 = "1.1.11"
 http = "1.5.0"
 hyper = { version = "1.12.0", features = ["server", "http1"] }
 http-body-util = "0.1.5"
 hyper-util = { version = "0.1.21", features = ["full"] }
 hyper-rustls = "0.27.10"
 lazy_static = "1.5.1"
-libunftp = "0.24.0"
-unftp-core = "0.1.0"
-opendal = { version = "=0.57.0", optional = true }
+libunftp = "0.25.1"
+unftp-core = "0.1.1"
+opendal = { version = "=0.59.5", optional = true }
 prometheus = { version = "0.14.0", features = ["process"] }
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.154"
@@ -59,19 +59,19 @@ strum = { version = "0.28.0", features = ["derive"] }
 strum_macros = "0.28.0"
 thiserror = "2.0.21"
 tokio = { version = "1.54.1", features = ["full"] }
-unftp-sbe-fs = "0.4.0"
-unftp-sbe-rooter = "0.3.0"
-unftp-sbe-restrict = "0.1.5"
-unftp-sbe-gcs = { version = "0.3.1", optional = true }
-unftp-sbe-opendal = { version = "=0.4.2", optional = true }
-unftp-sbe-iso = { version = "0.2.0", optional = true }
-unftp-auth-jsonfile = { version = "0.4.0", optional = true }
-unftp-auth-rest = { version = "0.3.1", optional = true }
+unftp-sbe-fs = "0.4.1"
+unftp-sbe-rooter = "0.3.1"
+unftp-sbe-restrict = "0.1.6"
+unftp-sbe-gcs = { version = "0.3.2", optional = true }
+unftp-sbe-opendal = { version = "=0.4.11", optional = true }
+unftp-sbe-iso = { version = "0.2.1", optional = true }
+unftp-auth-jsonfile = { version = "0.4.1", optional = true }
+unftp-auth-rest = { version = "0.3.2", optional = true }
 url = "2.5.8"
 rustls = "0.23.46"
 
 [target.'cfg(unix)'.dependencies]
-unftp-auth-pam = { version = "0.3.0", optional = true }
+unftp-auth-pam = { version = "0.3.1", optional = true }
 
 [features]
 default = ["auth_rest", "sbe_gcs", "auth_jsonfile", "sbe_opendal"]

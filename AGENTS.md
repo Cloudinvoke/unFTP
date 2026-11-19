@@ -58,6 +58,17 @@
 
 ## Changelogs and release notes
 
+- For every unFTP release, compare the libunftp versions resolved in
+  `Cargo.lock` for the previous unFTP release and the release being prepared.
+  Review the upstream changes across that version range and include significant
+  features, improvements, bug fixes, security fixes, and compatibility notes
+  relevant to unFTP users in an "Improvements from libunftp" section of the
+  GitHub release notes. Exclude cleanup, routine dependency bumps, and library
+  APIs or features that unFTP does not expose. Do not include changes already
+  shipped in the previous unFTP release or introduced after the bundled version.
+- Keep this upstream libunftp detail out of `CHANGELOG.md`; it belongs only in
+  the GitHub release notes. `CHANGELOG.md` may still record unFTP's libunftp
+  dependency upgrade itself.
 - Look up associated merged GitHub pull requests when updating changelogs
   or release notes, and link entries to them where available, following
   the existing `[#240](https://github.com/Cloudinvoke/unFTP/pull/240)`
