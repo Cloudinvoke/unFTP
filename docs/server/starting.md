@@ -28,6 +28,11 @@ This will start unFTP:
 - the FTP control channel bound to `0.0.0.0:2121` and the data channel range set to `0.0.0.0` ports `49152`..`65535`
 - authentication being anonymous i.e. clients can specify any username and password
 
+The FTP `HELP` command replies with `Welcome to unFTP, for help go to https://unftp.rs` by default.
+Set a single-line reply with `--help-text "Contact support for help"` or `UNFTP_HELP_TEXT`.
+For a reply with multiple lines, put one line per reply line in a UTF-8 file and pass
+`--help-text-file /path/to/help.txt` or set `UNFTP_HELP_TEXT_FILE`. The two settings are mutually exclusive.
+
 Now serving data from your computer's temporary directory is not very useful so lets point it to a different directory
 by using the `--root-dir` argument. In addition, lets limit the data port range a bit:
 

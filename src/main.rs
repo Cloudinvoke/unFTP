@@ -384,9 +384,7 @@ pub fn azblob_storage_backend(log: &Logger, m: &clap::ArgMatches) -> Result<VfsP
                 format!("could not parse AZBLOB_BATCH_MAX_OPERATIONS to usize: {e}")
             })?);
     }
-    let op = opendal::Operator::new(b)
-        .map_err(|e| format!("could not build Azblob: {e}"))?
-        .finish();
+    let op = opendal::Operator::new(b).map_err(|e| format!("could not build Azblob: {e}"))?;
     let sbe = unftp_sbe_opendal::OpendalStorage::new(op);
     let sub_log = Arc::new(log.new(o!("module" => "storage")));
 
@@ -567,10 +565,24 @@ where
         hostname: hostname.clone(),
     });
 
+    let help_text: Vec<String> =
+        if let Some(path) = args::str_arg(arg_matches, args::HELP_TEXT_FILE) {
+            fs::read_to_string(path)
+                .map_err(|e| format!("could not read HELP text file {path}: {e}"))?
+                .lines()
+                .map(str::to_owned)
+                .collect()
+        } else {
+            vec![args::str_arg(arg_matches, args::HELP_TEXT)
+                .unwrap_or("Welcome to unFTP, for help go to https://unftp.rs")
+                .to_owned()]
+        };
+
     let mut server =
         ServerBuilder::with_user_detail_provider(storage_backend, user_detail_provider)
             .authenticator(authenticator)
             .greeting("Welcome to unFTP")
+            .help_text(help_text)
             .passive_ports(start_port..=end_port)
             .idle_session_timeout(idle_timeout)
             .logger(root_log.new(o!("lib" => "libunftp")))
