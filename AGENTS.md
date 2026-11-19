@@ -58,6 +58,15 @@
 
 ## Changelogs and release notes
 
+- Publish each unFTP server release to crates.io with `make publish` after
+  publishing the GitHub release. First run the same `cargo publish` command
+  with `--dry-run`, then verify the new version is
+  available on crates.io. Do not treat the GitHub release as complete until
+  the crates.io publication has been checked.
+- End each release handoff with a ready-to-post Telegram channel announcement.
+  Summarize the main user-facing changes and link the GitHub release and
+  crates.io package. Draft the text for the maintainer; do not post it unless
+  explicitly asked.
 - For every unFTP release, compare the libunftp versions resolved in
   `Cargo.lock` for the previous unFTP release and the release being prepared.
   Review the upstream changes across that version range and include significant
